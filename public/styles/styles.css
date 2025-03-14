@@ -78,3 +78,10 @@ input[type=text], select {
     width: 800px;
     margin-top: 100px;
   }
+
+  .register {
+    margin-top: 50px;
+  }
+  .google {
+   text-align: center;
+  }

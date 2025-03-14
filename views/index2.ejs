@@ -13,12 +13,12 @@
         <div class="contents">
             <div class="row"> 
                 <div class="col-3">
-                    <img src='https://covers.openlibrary.org/b/isbn/<%= listItems[0].b_values %>-L.jpg' alt="image to be generated" 
+                    <img src='https://covers.openlibrary.org/b/isbn/<%= listItems[0].book_values %>-L.jpg' alt="image to be generated" 
                     class="images1" >
                 </div>
                 <div class="col-9">
                     <h2 class="book-title"><%= listItems[0].title %> By <%= listItems[0].author %></h2>
-                    <p>Date Read: <%= listItems[0].dates %></p>
+                    <p>Date Read: <%= listItems[0].start_date %></p>
                     <p class="rating">Ratings: <%= listItems[0].rating %>/10</p>
                     <p class="summary"><%= listItems[0].summary %></p>
                 </div>
@@ -26,7 +26,7 @@
                     <h2>My Notes</h2>
                     <% for(let item of listItems ) { %>
                         <p>
-                            <%= item.notes %>
+                            <%= item.note %>
                         </p>
                     <% } %>
                 </div>
@@ -34,8 +34,8 @@
                     <div class="col-6">
                         <form action="/submit" method="post">
                             <% if (listItems.length > 0) { %>
-                                <% if (listItems[0].books_id) { %>
-                                    <input type="hidden" name="notes_id" value="<%= listItems[0].books_id %>">
+                                <% if (listItems[0].book_id) { %>
+                                    <input type="hidden" name="notes_id" value="<%= listItems[0].book_id %>">
                                 <% } else { %>
                                     <input type="hidden" name="notes_id" value="<%= listItems[0].id %>">
                                 <% } %>

@@ -15,12 +15,12 @@
     <div class="container">
         <div class="container">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <a href="/home" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                 <span class="fs-4">Book Notes</span>
                 </a>
         
                 <ul class="nav nav-pills">
-                <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item"><a href="/home" class="nav-link active" aria-current="page">Home</a></li>
                 <li class="nav-item"><a href="/new" class="nav-link">New-Book</a></li>
                 </ul>
             </header>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-lg-6">
                     <h2>I'm</h2>
-                    <h1 class="">Toluwani</h1>
+                    <h1 class=""><%= currentUser.username %></h1>
                     <p class="lead">here are books i’ve read in my lifetime. 
                         you can go through this page to see my notes and ratings of these books</p>
                 </div>
@@ -45,11 +45,11 @@
             <% for( let item of listItems) { %>
                 <div class="row"> 
                     <div class="col-3">
-                        <img src='https://covers.openlibrary.org/b/isbn/<%= item.b_values %>-L.jpg' alt="image to be generated" class="img2">
+                        <img src='https://covers.openlibrary.org/b/isbn/<%= item.book_values %>-L.jpg' alt="image to be generated" class="img2">
                     </div>
                     <div class="content col-9">
                         <a href="/notes?id=<%= item.id %>" class="book-title"><%= item.title %> By <%= item.author %></a>
-                        <p>Date Read: <%= item.dates %></p>
+                        <p>Started reading <%= item.start_date %> and ended <%= item.end_date %> </p>
                         <p class="rating">Ratings: <%= item.rating %>/10</p>
                         <p class="summary"><%= item.summary %></p>
                     </div>

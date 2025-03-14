@@ -1,0 +1,22 @@
+# Node dependencies
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Environment variables (IMPORTANT for security)
+.env
+
+# Logs
+logs/
+*.log
+logs/**/*.log
+
+# OS-specific files
+.DS_Store  # macOS
+Thumbs.db  # Windows
+
+# Build & Cache
+dist/
+build/
+.cache/
